@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Defender - DevOps Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Game Header -->
+        <header class="game-header">
+            <h1 class="game-title">SPACE DEFENDER</h1>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-label">Score:</span>
+                    <span id="score" class="stat-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Lives:</span>
+                    <span id="lives" class="stat-value">3</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Level:</span>
+                    <span id="level" class="stat-value">1</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Game Canvas -->
+        <div class="game-area">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            
+            <!-- Game UI Overlay -->
+            <div class="game-overlay">
+                <div id="startScreen" class="screen active">
+                    <h2>Welcome to Space Defender</h2>
+                    <p>Defend Earth from alien invaders!</p>
+                    <div class="controls-info">
+                        <p><strong>Controls:</strong></p>
+                        <p>← → Arrow keys to move</p>
+                        <p>Spacebar to shoot</p>
+                    </div>
+                    <button id="startBtn" class="game-btn">START GAME</button>
+                </div>
+
+                <div id="gameOverScreen" class="screen">
+                    <h2>Game Over</h2>
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                    <button id="restartBtn" class="game-btn">PLAY AGAIN</button>
+                </div>
+
+                <div id="pauseScreen" class="screen">
+                    <h2>Game Paused</h2>
+                    <p>Press P to resume</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Controls -->
+        <div class="game-controls">
+            <button id="pauseBtn" class="control-btn">PAUSE</button>
+            <button id="muteBtn" class="control-btn">MUTE</button>
+            <div class="difficulty">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="normal" selected>Normal</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- DevOps Info Panel -->
+        <div class="devops-panel">
+            <h3>🚀 DevOps Status</h3>
+            <div class="status-grid">
+                <div class="status-item">
+                    <span class="status-label">Build:</span>
+                    <span class="status-value success">✓ Passed</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Deploy:</span>
+                    <span class="status-value success">✓ Active</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Health:</span>
+                    <span class="status-value success">✓ Healthy</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Version:</span>
+                    <span class="status-value">v1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
